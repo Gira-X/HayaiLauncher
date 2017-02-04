@@ -8,9 +8,10 @@ import java.util.*;
 public enum ContentShare {
 	;
 
-	private static final String[] filterOutTasks =
-			{"dspmanager", "omniswitch", "urbandroid.lux", "downloads.ui", "documentsui",
-					"android.stk", "touchtype.swiftkey"};
+	private static final String[] filterOutPackageNames =
+			{"com.android.documentsui", "org.omnirom.omniswitch", "com.bel.android.dspmanager",
+					"com.android.providers.downloads.ui", "com.android.stk", "com.urbandroid.lux",
+					"com.touchtype.swiftkey"};
 
 	public static Intent shareTextIntent(final String text) {
 		final Intent sendIntent = new Intent();
@@ -23,10 +24,13 @@ public enum ContentShare {
 
 	private static List<ResolveInfo> filterOutResolveInfos(final Collection<ResolveInfo> infos) {
 		final List<ResolveInfo> filtered = new ArrayList<>(infos.size());
+		final Collection<String> filters = new ArrayList<>(Arrays.asList(filterOutPackageNames));
+
 		for (final ResolveInfo info : infos) {
 			boolean passedFilter = true;
-			for (final String filter : filterOutTasks) {
-				if (info.activityInfo.packageName.contains(filter)) {
+			for (final String filter : filters) {
+				if (info.activityInfo.packageName.equals(filter)) {
+					filters.remove(filter);
 					passedFilter = false;
 					break;
 				}
