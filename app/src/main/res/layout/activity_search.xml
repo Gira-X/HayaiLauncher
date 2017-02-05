@@ -39,22 +39,22 @@
             android:gravity="center"
             android:horizontalSpacing="@dimen/app_row_horizontal_spacing"
             android:numColumns="@integer/app_grid_columns"
+            android:paddingBottom="8dp"
             android:paddingLeft="@dimen/activity_horizontal_margin"
             android:paddingRight="@dimen/activity_horizontal_margin"
             android:paddingTop="424dp"
-            android:paddingBottom="8dp"
             android:scrollbars="none"
             android:stretchMode="columnWidth"
             android:verticalSpacing="@dimen/app_row_vertical_spacing"/>
-    </LinearLayout>
+    </RelativeLayout>
 
     <LinearLayout
         android:id="@+id/everything_on_top"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
-        android:layout_margin="0dp"
-        android:alpha="0.25"
+        android:layout_marginTop="8dp"
+        android:alpha="0.2"
         android:orientation="vertical">
 
         <View
