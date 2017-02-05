@@ -283,7 +283,8 @@ public class SearchActivity extends Activity
 
 		});
 
-
+		final SimpleDateFormat format = new SimpleDateFormat("MMM dd", Locale.US);
+		((TextView) findViewById(R.id.date)).setText(format.format(new Date()));
 	}
 
 	private boolean openFirstActivity() {
