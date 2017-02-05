@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
-    package="com.hayaisoftware.launcher"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <uses-sdk
-        android:minSdkVersion="15"
-        android:targetSdkVersion="22" />
-
-    <!-- <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> -->
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.hayaisoftware.launcher">
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppBaseTheme" >
+        android:theme="@style/AppBaseTheme">
 
         <activity
             android:name="com.hayaisoftware.launcher.activities.SearchActivity"
@@ -21,33 +15,21 @@
             android:label="@string/title_activity_search"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize"
-            >
-
+            android:windowSoftInputMode="adjustResize">
 
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.ASSIST"/>
 
-                <action android:name="android.intent.action.ASSIST" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-                
-
-                <category android:name="android.intent.category.HOME" />
-                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.HOME"/>
+                <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
         <activity
             android:name="com.hayaisoftware.launcher.activities.SettingsActivity"
             android:label="@string/title_activity_settings"
-            android:theme="@style/AppSettingsTheme" >
-        </activity>
-        <activity
-            android:name="com.hayaisoftware.launcher.activities.AboutActivity"
-            android:theme="@style/AppSettingsTheme"
-            android:label="@string/title_activity_about" >
+            android:theme="@style/AppSettingsTheme">
         </activity>
     </application>
-
-
 </manifest>

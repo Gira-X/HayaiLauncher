@@ -648,10 +648,6 @@ public class SearchActivity extends Activity
 				final Intent intentWallpaperPicker = new Intent(Intent.ACTION_SET_WALLPAPER);
 				startActivity(intentWallpaperPicker);
 				return true;
-			case R.id.action_about:
-				final Intent intentAbout = new Intent(this, AboutActivity.class);
-				startActivity(intentAbout);
-				return true;
 			default:
 				return super.onOptionsItemSelected(item);
 		}
