@@ -83,7 +83,6 @@ public class SearchActivity extends Activity
 	private StringBuilder mWordSinceLastSpaceBuilder;
 	private StringBuilder mWordSinceLastCapitalBuilder;
 	private int mGridViewTopRowHeight;
-	private int mGridViewBottomRowHeight;
 	private boolean mShouldOrderByRecents;
 	private boolean mShouldOrderByUsages;
 	private final TextWatcher mTextWatcher = new TextWatcher() {
@@ -141,16 +140,9 @@ public class SearchActivity extends Activity
 		final float displayDensity = displayMetrics.density;
 		final int gridViewTopRowExtraPaddingInPixels =
 				Math.round(displayDensity * sGridViewTopRowExtraPaddingInDP);
-		final int marginFromNavigationBarInPixels =
-				Math.round(displayDensity * sMarginFromNavigationBarInDp);
-		final int gridItemHeightInPixels =
-				Math.round(displayDensity * sGridItemHeightInDp);
 		int statusBarMultiplierPaddings = setPaddingHeights();
 		mGridViewTopRowHeight = statusBarMultiplierPaddings * mStatusBarHeight +
 				gridViewTopRowExtraPaddingInPixels;
-		mGridViewBottomRowHeight = gridItemHeightInPixels + sNavigationBarHeightMultiplier *
-				StatusBarColorHelper.getNavigationBarHeight(getResources()) +
-				marginFromNavigationBarInPixels;
 
 		mColumnCount = resources.getInteger(R.integer.app_grid_columns);
 
@@ -283,7 +275,11 @@ public class SearchActivity extends Activity
 
 		});
 
-		final SimpleDateFormat format = new SimpleDateFormat("MMM dd", Locale.US);
+		updateDateTextView();
+	}
+
+	private void updateDateTextView() {
+		final SimpleDateFormat format = new SimpleDateFormat("MMM d", Locale.US);
 		((TextView) findViewById(R.id.date)).setText(format.format(new Date()));
 	}
 
@@ -700,6 +696,9 @@ public class SearchActivity extends Activity
 	}
 
 	public void launchActivity(final LaunchableActivity launchableActivity) {
+		// should be often enough to pick up correctly on new days
+		// avoids creating a new thread just for the date update
+		updateDateTextView();
 
 		hideKeyboard();
 		try {
@@ -716,8 +715,6 @@ public class SearchActivity extends Activity
 			Toast.makeText(mContext, getString(R.string.activity_not_found),
 					Toast.LENGTH_SHORT).show();
 		}
-
-
 	}
 
 	public void onClickClearButton(View view) {
