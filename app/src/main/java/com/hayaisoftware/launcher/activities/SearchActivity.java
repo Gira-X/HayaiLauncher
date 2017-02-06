@@ -44,10 +44,7 @@ import java.util.regex.*;
 public class SearchActivity extends Activity
 		implements SharedPreferences.OnSharedPreferenceChangeListener {
 
-	private static final int sNavigationBarHeightMultiplier = 1;
 	private static final int sGridViewTopRowExtraPaddingInDP = 56;
-	private static final int sMarginFromNavigationBarInDp = 16;
-	private static final int sGridItemHeightInDp = 96;
 	private static final int sInitialArrayListSize = 300;
 
 	private final Pattern mPattern = Pattern.compile("\\p{InCombiningDiacriticalMarks}+");
