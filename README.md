@@ -10,4 +10,4 @@
 * Displaying current date in the top right corner
 * Removed About screen
 
-See [original repo](https://github.com/seizonsenryaku/HayaiLauncher)
+![](https://github.com/Gira-X/HayaiLauncher/raw/master/screencast/1.gif)
