@@ -1,3 +1,5 @@
+![](https://github.com/Gira-X/HayaiLauncher/raw/master/screencast/1.gif)
+
 * Set search bar opacity to 20%
 * 5 columns are displayed regardless of the device now
 * Redid all GridView margins
@@ -9,5 +11,3 @@
   * This can be only changed at compile time
 * Displaying current date in the top right corner
 * Removed About screen
-
-![](https://github.com/Gira-X/HayaiLauncher/raw/master/screencast/1.gif)
