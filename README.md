@@ -1,4 +1,4 @@
-![](https://github.com/Gira-X/HayaiLauncher/raw/master/screencast/1.gif)
+<img src="https://github.com/Gira-X/HayaiLauncher/raw/master/screencast/1.gif" width="320" height="569">
 
 * Set search bar opacity to 20%
 * 5 columns are displayed regardless of the device now
